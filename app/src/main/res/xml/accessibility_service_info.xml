@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<accessibility-service xmlns:android="http://schemas.android.com/apk/res/android"
+    android:accessibilityEventTypes="typeAllMask"
+    android:accessibilityFeedbackType="feedbackGeneric"
+    android:accessibilityFlags="flagDefault"
+    android:canRetrieveWindowContent="true"
+    android:canPerformGestures="true"
+    android:description="@string/app_name"
+    android:notificationTimeout="100"
+    android:packageNames="com.duowan.mobile"
+    android:settingsActivity="com.example.levine.automationcomment" />
+
+    <!--
+         android:description="@string/accessibility_service_description" 描述
+         android:accessibilityEventTypes="typeAllMask"  事件类型
+         类型：
+                         #TYPES_ALL_MASK：所有类型
+                         #TYPE_VIEW_CLICKED ：单击
+                         #TYPE_VIEW_LONG_CLICKED ：长按
+                         #TYPE_VIEW_SELECTED ：选中
+                         #TYPE_VIEW_FOCUSED ：获取焦点
+                         #TYPE_VIEW_TEXT_CHANGED ：文字改变
+                         #TYPE_WINDOW_STATE_CHANGED ：窗口状态改变
+                         #TYPE_NOTIFICATION_STATE_CHANGED
+                         #TYPE_VIEW_HOVER_ENTER
+                         #TYPE_VIEW_HOVER_EXIT
+                         #TYPE_TOUCH_EXPLORATION_GESTURE_START
+                         #TYPE_TOUCH_EXPLORATION_GESTURE_END
+                         #TYPE_WINDOW_CONTENT_CHANGED
+                         #TYPE_VIEW_SCROLLED
+                         #TYPE_VIEW_TEXT_SELECTION_CHANGED
+                         #TYPE_ANNOUNCEMENT
+                         #TYPE_VIEW_TEXT_TRAVERSED_AT_MOVEMENT_GRANULARITY
+                         #TYPE_GESTURE_DETECTION_START
+                         #TYPE_GESTURE_DETECTION_END
+                         #TYPE_TOUCH_INTERACTION_START
+                         #TYPE_TOUCH_INTERACTION_END
+                         #TYPE_WINDOWS_CHANGED
+         android:accessibilityFeedbackType="feedbackGeneric" 反馈类型，声音、震动等
+         android:canRetrieveWindowContent="true", 允许获取手机页面中的信息
+         android:packageNames="top.cokernut.sample" 要监听的包名，过滤作用
+         android:settingsActivity="packname.android.accessibility.ServiceSettingsActivity" packname写自己App的包名
+    -->
