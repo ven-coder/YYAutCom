@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/recyclerview"
+    android:visibility="gone"
     android:layout_width="match_parent"
     android:background="#b3b3b3"
     android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>

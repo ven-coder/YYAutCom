@@ -83,10 +83,10 @@ public class MyService extends AccessibilityService {
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR2)
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @Override
+    //所控制的app页面变化所执行的方法
     public void onAccessibilityEvent(AccessibilityEvent event) {
         // 事件页面节点信息不为空
         AccessibilityNodeInfo source = event.getSource();
-
         int eventType = event.getEventType();
         String eventText = "";
 
@@ -152,8 +152,6 @@ public class MyService extends AccessibilityService {
                 L.i(eventText);
                 break;
         }
-
-        L.w("======");
         if (!isLaunch) {
             stopSelf(0);
         }
@@ -172,13 +170,6 @@ public class MyService extends AccessibilityService {
         @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR2)
         @Override
         public void handleMessage(final Message msg) {
-//            if (examineStopHandle()) {
-//                return;
-//            }
-//            if (!isThis()) {
-//                TShow.showShort(getApplication(), "已停止");
-//                return;
-//            }
             switch (msg.what) {
                 case 1:
                     AccessibilityNodeInfo a_1_1 = findTextView(getRootInActiveWindow(), "个人中心", 0);
@@ -304,7 +295,7 @@ public class MyService extends AccessibilityService {
                     //输入账号
                     AccessibilityNodeInfo a_44_1 = findIdView(getRootInActiveWindow(), "com.yy.mobile.plugin.main:id/EdtAccount");
                     if (a_44_1 != null) {
-                        paste(a_44_1, "13148934781");
+                        paste(a_44_1, "1314781");
                         next(55, 2000);
                     } else {
                         TShow.showShort("账号输入失败");
@@ -450,8 +441,8 @@ public class MyService extends AccessibilityService {
         Path path = new Path();
         int start = (screenHeight / 20) * startSlideRatio;
         int stop = (screenHeight / 20) * stopSlideRatio;
-        path.moveTo(screenWidth / 2, start);
-        path.lineTo(screenWidth / 2, stop);
+        path.moveTo(screenWidth / 2, start);//如果只是设置moveTo就是点击
+        path.lineTo(screenWidth / 2, stop);//如果设置这句就是滑动
         GestureDescription.Builder builder = new GestureDescription.Builder();
         GestureDescription gestureDescription = builder
                 .addStroke(new GestureDescription.
@@ -590,25 +581,7 @@ public class MyService extends AccessibilityService {
         return true;
     }
 
-    /**
-     * 是否评论过
-     */
-    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR2)
-    public boolean isAgain() {
-        AccessibilityNodeInfo rootInActiveWindow = getRootInActiveWindow();
 
-        if (rootInActiveWindow != null) {
-            for (String s : MainActivity.comments) {
-                AccessibilityNodeInfo textView = findTextView(rootInActiveWindow, s, 0);
-                if (textView != null) {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-
-    public static int clickCount = 0;
 
 
     /**
